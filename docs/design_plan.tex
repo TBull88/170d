@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {/docs_incomplete/} } 
+\newcommand*{\escape}[1]{\texttt{\textbackslash#1}}
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{6cm}
+
+        
+        \textbf{\Huge{Design Plan}}
+            
+        \vspace{0.5cm}
+        \textit{\large{Minorly - OS, Mod Q Practical 1B}}
+        \vspace{0.5cm}
+        
+        \textsc{\large{170D Class: 23-001}}
+            
+        \vspace{7.5cm}
+            
+        \textsc{\small{Timothy G. Bullington}}
+        \vspace{0.5cm}
+        
+        
+        
+        \textsc{\small{tmiothy.g.bullington@gmail.com}}
+
+        \vspace{0.5cm}
+        \textsc{\small{Nov 28, 2023}}
+
+            
+
+    \end{center}
+\end{titlepage}
+
+\section{Project Summary}
+
+The Minorly program is designed to replicate a some of the functionality present inside the bash shell. The Minorly shell is required to handle all binary programs present in bash, along with several built-ins such as cd, IO redirect, setting environment variables, and working with background processes.\\
+
+\section{Bench Marks}
+
+\textbf{Day 1}
+
+\begin{enumerate}
+ \item Work on project desing and formulate structure and flow for program. 
+\end{enumerate}
+
+\noindent\textbf{Day 2}
+
+\begin{enumerate}
+ \item Able to parse command line string into tokens and save into args array 
+ \item Build loop to implement shell-like functionality
+ \item Start working on built-in functions i.e. "cd" and IO redirect
+\end{enumerate}
+
+\noindent\textbf{Day 3}
+
+\begin{enumerate}
+ \item Work on background job funtionality i.e. "\&" and "fg"
+ \item Code clean-up. 
+ \item Write unit tests.
+ \item Documentation. 
+\end{enumerate}
+
+\section{Program invocation}
+
+\begin{enumerate}
+ \item make - will compile the program and produce an executable. 
+ \item ./minorly - will execute the binary.
+\end{enumerate}
+
+\end{document}

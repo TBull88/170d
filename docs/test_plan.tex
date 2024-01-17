@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\newcommand*{\escape}[1]{\texttt{\textbackslash#1}}
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{6cm}
+
+        
+        \textbf{\Huge{Test Plan}}
+            
+        \vspace{0.5cm}
+        \textit{\large{Buyer-Seller Test Plan - Module Q, Practical 1B}}
+        \vspace{0.5cm}
+        
+        \textsc{\large{170D Class: 23-001}}
+            
+        \vspace{7.5cm}
+            
+        \textsc{\small{Timothy G. Bullington}}
+        \vspace{0.5cm}
+        
+        
+        
+        \textsc{\small{tmiothy.g.bullington@gmail.com}}
+
+        \vspace{0.5cm}
+        \textsc{\small{Dec 12, 2023}}
+
+            
+
+    \end{center}
+\end{titlepage}
+
+
+\section{Purpose}
+
+Buyer-Seller requires two seperate programs to be built. The seller application is a server than handles up to 10 connections from the buyer application simultaneously. When the buyer application is executed, it connects to the seller and begins sending transactions for the seller to clear. Both buyer and seller are required to display the same output after all processes have executed, or a terminating signal is received. \\
+
+\noindent Testing of the Buyer-Seller program is needed to ensure all functions contained within the program are exhibiting desired behavior and are handling any invlaid input. The tests created will focus on three main components.
+\begin{enumerate}
+ \item Testing functions with NULL
+ \begin{itemize} 
+  \item Automated testing will be used to ensure all checks for NULL are working properly inside applicable functions.
+ \end{itemize}
+ \item Testing function with valid data
+ \begin{itemize} 
+  \item Valid data will be used during testing as a control to ensure all functions are presenting desired output.
+ \end{itemize}
+ \item Manual Testing
+ \begin{itemize} 
+  \item Due to the nature of the project bash scripts will be used to manually test both buyer and seller for proper function when a signal is handled (SIGINT and SIGTERM)
+ \end{itemize}
+ 
+\end{enumerate}
+ 
+\section{Automated Testing}
+
+The  Automated testing of the Buyer-Seller program will consist of tests used to efficiently tell the user the functions are working as expected. The tests are ran using the check library. To run the tests follow the prompts listed below.
+
+\begin{enumerate}
+ \item clone repository via https or ssh: 
+ \begin{itemize}
+  \item \$ git clone [repository]
+ \end{itemize}
+ \item \$ cd buyer-seller
+ \item \$ make check_server : Runs Unit Testing for Seller binary
+ \item \$ make check_client : Runs Unit Testing for Buyer binary
+\end{enumerate}
+
+\section{Testing Strategy}
+
+\subsection{Functions to be Tested: buyer\_funcs.c}
+
+\begin{enumerate}
+ \item int check\_file(FILE *fp);
+ \item int populate\_buyer\_acct(int acct\_id, int amount);
+\end{enumerate}
+
+\subsection{Test Cases: buyer\_funcs.c}
+
+\begin{enumerate}
+ \item test\_ret\_check\_file: Test to ensure the correct return code is being returned from IO function.
+ \begin{itemize}
+  \item Function returns 1 if file is valid, else 0.
+ \end{itemize}
+ \item test\_populate\_buyer: Test to ensure the correct return code is being returned from populate\_buyer function.
+ \begin{itemize}
+  \item Function returns 1 if amount != 0, else 0.
+
+
+
+\section{Expected Output}
+
+\begin{verbatim}
+./minorly_check
+Running suite(s): Minorly Funcs
+cd missing expected arg
+No file specified for redirection
+[1] 123
+[2] 456
+Variable to unset: TEST_VAR
+100%: Checks: 5, Failures: 0, Errors: 0
+\end{verbatim}
+
+\end{document}
+
